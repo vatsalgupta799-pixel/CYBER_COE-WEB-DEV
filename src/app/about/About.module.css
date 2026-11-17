@@ -1,0 +1,287 @@
+/* ========================================
+   ABOUT PAGE — Cyber CoE
+   ======================================== */
+
+/* ---------- PAGE HERO ---------- */
+.heroSection {
+  position: relative;
+  height: 40vh;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg) 0%, #2b0413 40%, #0b1a3d 70%, var(--primary) 100%);
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(11, 36, 71, 0.15), transparent),
+    radial-gradient(ellipse 500px 300px at 80% 20%, rgba(11, 36, 71, 0.1), transparent);
+  pointer-events: none;
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, var(--bg), transparent);
+  pointer-events: none;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary-light);
+}
+
+.breadcrumbSep {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ---------- SHARED SECTION ---------- */
+.section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: #e8eaed;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: -0.8px;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 640px;
+  margin: 0 auto 48px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ---------- MISSION & VISION ---------- */
+.missionVisionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.glassCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px 36px;
+  border-top: 3px solid var(--primary);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.glassCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(11, 36, 71, 0.12);
+}
+
+.glassCardIcon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.glassCardHeading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e8eaed;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+
+.glassCardText {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.glassCardText:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- FACILITIES ---------- */
+.facilitiesWrapper {
+  background: linear-gradient(180deg, var(--bg) 0%, #2b0413 100%);
+}
+
+.facilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.labCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  cursor: default;
+}
+
+.labCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 60px rgba(11, 36, 71, 0.14);
+}
+
+.labImagePlaceholder {
+  height: 180px;
+  width: 100%;
+}
+
+.labGrad1 { background: linear-gradient(135deg, #0b1a3d, var(--primary)); }
+.labGrad2 { background: linear-gradient(160deg, #0f0714, #2b0413, #0b1a3d); }
+.labGrad3 { background: linear-gradient(200deg, #2b0413, var(--primary), var(--primary-light)); }
+.labGrad4 { background: linear-gradient(45deg, #2b0413, #0b1a3d, var(--primary)); }
+.labGrad5 { background: linear-gradient(270deg, var(--bg), #2b0413, #0b1a3d); }
+.labGrad6 { background: linear-gradient(315deg, #0b1a3d, #0f0714, var(--primary)); }
+
+.labContent {
+  padding: 22px 24px 26px;
+}
+
+.labTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e8eaed;
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+}
+
+.labDesc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.65;
+}
+
+/* ---------- PARTNERSHIPS ---------- */
+.partnershipsWrapper {
+  background: var(--bg);
+}
+
+.partnersIntro {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 640px;
+  margin: 0 auto 48px;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.partnerBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cad3de;
+  text-align: center;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.partnerBox:hover {
+  border-color: rgba(11, 36, 71, 0.45);
+  box-shadow: 0 0 24px rgba(11, 36, 71, 0.18), inset 0 0 12px rgba(11, 36, 71, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ---------- PAGE WRAPPER ---------- */
+.aboutPage {
+  background: transparent;
+  min-height: 100vh;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+  .missionVisionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .facilitiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partnersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 18px;
+  }
+
+  .facilitiesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .partnersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glassCard {
+    padding: 28px 22px;
+  }
+
+  .heroSection {
+    min-height: 260px;
+  }
+}

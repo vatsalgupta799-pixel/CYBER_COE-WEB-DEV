@@ -1,0 +1,12 @@
+.dustCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Behind the content, but above the background color */
+  pointer-events: none;
+  background: transparent;
+  transform: translateZ(0);
+  will-change: transform;
+}

@@ -1,0 +1,231 @@
+.publicationsPage {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  letter-spacing: -0.03em;
+  font-family: var(--font-league-spartan);
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: white;
+}
+
+.breadcrumbSep {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 5;
+  background: var(--bg-main);
+  padding: 80px 20px;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerArea {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.icon {
+  color: var(--primary);
+  margin-top: 5px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text-main);
+  font-family: var(--font-league-spartan);
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.pubGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.pubCard {
+  background: rgba(30, 35, 45, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+/* Invisible hit area extension to prevent hover shaking/jitter */
+.pubCard::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+}
+
+.pubCard:hover {
+  transform: translateY(-5px);
+  background: rgba(40, 45, 60, 0.8);
+  border-color: rgba(30, 101, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(30, 101, 255, 0.1);
+}
+
+.pubTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.pubMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.pubJournal {
+  color: #1E65FF;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pubYear {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.pubAuthors {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.pubFooter {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 20px;
+}
+
+.pubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.pubLink:hover {
+  color: var(--primary);
+}
+
+/* ─── Interactive Tabs ─── */
+.interactiveContainer {
+  margin-top: 40px;
+}
+
+.tabNav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 15px;
+}
+
+.tabBtn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #8d99ae;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.tabBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.activeTab {
+  background: rgba(30, 101, 255, 0.1) !important;
+  border-color: rgba(30, 101, 255, 0.5) !important;
+  color: #1E65FF !important;
+  box-shadow: 0 0 15px rgba(30, 101, 255, 0.1);
+}
+
+.tabContent {
+  position: relative;
+  min-height: 500px;
+}
+
+.hidden {
+  display: none;
+}
+
+.fadeIn {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .tabNav {
+    flex-direction: column;
+  }
+}

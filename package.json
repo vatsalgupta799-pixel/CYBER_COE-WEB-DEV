@@ -1,0 +1,37 @@
+{
+  "name": "cyber-coe-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack --experimental-https --experimental-https-key ./certificates/localhost-key.pem --experimental-https-cert ./certificates/localhost.pem",
+    "dev:http": "next dev --webpack",
+    "seed": "node scripts/seed.js",
+    "ssl:generate": "powershell -ExecutionPolicy Bypass -File ./scripts/generate-ssl.ps1",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "bcryptjs": "^3.0.3",
+    "dockerode": "^5.0.1",
+    "dotenv": "^17.4.2",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^1.24.0",
+    "mongoose": "^9.9.1",
+    "next": "16.2.10",
+    "next-themes": "^0.4.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "three": "^0.185.1",
+    "ws": "^8.21.3",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.4",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10"
+  }
+}

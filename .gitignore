@@ -1,0 +1,79 @@
+# ==============================================================================
+# Git Ignore Configuration — Centre for Cybersecurity (Cyber COE)
+# Prevents sensitive backend secrets, certificates, and build artifacts from GitHub
+# ==============================================================================
+
+# 1. Sensitive Environment Files & Secrets (NEVER COMMIT)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+*.env
+!.env.example
+
+# 2. SSL / TLS Certificates & Private Keys
+certificates/
+.certificates/
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+*.csr
+
+# 3. Dependencies
+node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# 4. Next.js & Build Outputs
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# 5. Local Databases & Backups
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.sql
+*.rdb
+
+# 6. Logs & Debugging
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 7. Testing & Coverage
+coverage/
+.nyc_output/
+
+# 8. OS & IDE Metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 9. Hosting & Cloud Platforms
+.vercel
+.netlify
+
+# 10. Temporary Scratch Files
+scratch/
+scratch_*.*
+*.tmp

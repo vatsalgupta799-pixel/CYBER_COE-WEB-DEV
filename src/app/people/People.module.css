@@ -1,0 +1,231 @@
+.peoplePage {
+  background: transparent;
+  min-height: 100vh;
+}
+
+/* ---------- PAGE HERO ---------- */
+.heroSection {
+  position: relative;
+  height: 40vh;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg) 0%, #2b0413 40%, #0b1a3d 70%, var(--primary) 100%);
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(11, 36, 71, 0.15), transparent),
+    radial-gradient(ellipse 500px 300px at 80% 20%, rgba(11, 36, 71, 0.1), transparent);
+  pointer-events: none;
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, var(--bg), transparent);
+  pointer-events: none;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary-light);
+}
+
+.breadcrumbSep {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ---------- SHARED SECTION ---------- */
+.section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: #e8eaed;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: -0.8px;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 640px;
+  margin: 0 auto 48px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ---------- PEOPLE GRID ---------- */
+.peopleGrid {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  padding-bottom: 24px;
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar for a sleek look but keep functionality */
+.peopleGrid::-webkit-scrollbar {
+  display: none;
+}
+.peopleGrid {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.glassCard {
+  flex: 0 0 auto;
+  min-width: 300px;
+  max-width: 320px;
+  scroll-snap-align: start;
+  text-decoration: none;
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px 36px;
+  border-top: 3px solid var(--primary);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  text-align: center;
+}
+
+.glassCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(11, 36, 71, 0.12);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 auto 20px;
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e8eaed;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.role {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.97rem;
+  margin-bottom: 14px;
+}
+
+.viewProfile {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: rgba(30, 101, 255, 0.12);
+  border: 1px solid rgba(30, 101, 255, 0.35);
+  color: #60a5fa;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 18px;
+  transition: all 0.25s ease;
+}
+
+.glassCard:hover .viewProfile {
+  background: rgba(30, 101, 255, 0.25);
+  border-color: rgba(30, 101, 255, 0.6);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(30, 101, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Removed grid-template-columns media queries because peopleGrid is now a flex row */
+
+/* --- CATEGORY SECTIONS --- */
+.categorySection {
+  margin-bottom: 4rem;
+}
+
+.categorySection:last-child {
+  margin-bottom: 0;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.categoryTitle {
+  font-size: 2rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.viewAllLink {
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.viewAllLink:hover {
+  opacity: 1;
+}
